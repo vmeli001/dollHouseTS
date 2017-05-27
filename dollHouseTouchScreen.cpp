@@ -87,6 +87,7 @@ void touchLoc(TSPoint p){
           sendIR(where,color,action);
         }
         else if ((p.x<450)&&(p.x>410)){
+          checkBalance();
           action="WHEEL";
           checkColor();
           blinkLED(100,1);
@@ -141,25 +142,6 @@ void touchLoc(TSPoint p){
         blinkLED(100,5);
         color = "WHITE";
       }
-      else if ((p.x<380)&&(p.x>355)){
-        action="PLUS";
-        
-        blinkLED(100,1);
-        sendIR(where,color,action);
-      }
-      else if ((p.x<407)&&(p.x>382)){
-          action="MINUS";
-        blinkLED(100,1);
-        sendIR(where,color,action);
-      }
-      else if ((p.x<450)&&(p.x>410)){
-
-        checkBalance();
-        action="WHEEL";
-        checkColor();
-        blinkLED(100,1);
-        sendIR(where,color,action);
-      }
     }
   }
 }
@@ -189,13 +171,3 @@ void calibration(){
   //writeEEPROM();
   //readEEPROM();
 }
-
-
-
-
-
-
-
-
-
-
